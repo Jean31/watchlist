@@ -1,0 +1,17 @@
+﻿{
+  "name": "watchlist",
+  "version": "0.0.1",
+  "description": "dynamic watch list",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node watchlist.spec.js"
+  },
+  "keywords": [
+    "tdd"
+  ],
+  "author": "ludovic.pradel@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-node": "~1.13.0"
+  }
+}
