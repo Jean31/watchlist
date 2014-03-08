@@ -4,7 +4,7 @@
   "description": "dynamic watch list",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node watchlist.spec.js"
+    "test": "jasmine-node tests/server.spec.js"
   },
   "keywords": [
     "tdd"
