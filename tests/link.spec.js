@@ -13,6 +13,12 @@ describe("link tests", function() {
     var newLink = link.create('website', 'url');
     newLink.markAsRead();
     expect(newLink.isRead()).toBe(true);
+  });
+  it("could unmark a reading link", function() {
+    var newLink = link.create('website', 'url');
+    newLink.markAsRead();
+    newLink.markAsUnread();
+    expect(newLink.isRead()).toBe(false);
   });      
 });
 
