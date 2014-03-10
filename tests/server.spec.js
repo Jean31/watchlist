@@ -1,34 +1,26 @@
 var http = require('http');
 
+var Server = require('../src/server.js');
 
 describe("Tests suite", function() {
   it("should launch server & return statusCode 200", function() {
-    var server = http.createServer(function (request, response) {
-      response.writeHead(200, { 'Content-Type': 'text/plain' });
-      response.end('Hello, world!\n');
-    });
-	
-    server.listen(8080);
-	
+    server = new Server();
+    server.start();	
     http.get('http://localhost:8080', function (response) {
       expect(response.statusCode).toBe(200);
     });
 	
-    server.close();
+    server.stop();
   });
 
   it("should display watch list", function() {
-    var server = http.createServer(function (request, response) {
-      response.writeHead(200, { 'Content-Type': 'text/plain' });
-      response.end('Hello, world!\n');
-    });
 
-    server.listen(8080);
-
+    server = new Server();
+    server.start();
     http.get('http://localhost:8080', function(response) {
       expect(response.statusCode).toBe(200);
     });
 
-    server.close();
+    server.stop();
   });
 });
