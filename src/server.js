@@ -1,22 +1,30 @@
 var http = require('http');
+var url = require('url');
+var route = require('./router.js');
 
 var Server = function (port) {
   this.port = port;
 };
 
-Server.prototype.start = function () {
+function start(route) {
   function onRequest(request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
+	var pathname = url.parse(request.url).pathname;
+	
+	route(pathname);
+    
+	response.writeHead(200, { 'Content-Type': 'text/plain' });
     response.end('Hello, world!\n');
   }
 
   this.server = http.createServer(onRequest);
-
+  console.log('server started!');
   this.server.listen(8080);
 };
 
-Server.prototype.stop = function () {
+function stop() {
   this.server.close();
 };
 
-module.exports = Server;
+
+exports.start = start;
+exports.stop = stop;

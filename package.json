@@ -4,6 +4,7 @@
   "description": "dynamic watch list",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jasmine-node tests/"
   },
   "keywords": [
@@ -12,6 +13,7 @@
   "author": "ludovic.pradel@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "jasmine-node": "~1.13.0"
+    "jasmine-node": "~1.13.0",
+    "request" : "latest"
   }
 }
