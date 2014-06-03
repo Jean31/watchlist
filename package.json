@@ -11,6 +11,7 @@
     "tdd"
   ],
   "author": "ludovic.pradel@gmail.com",
+  "contributors" : "jean.palazuelos@gmail.com",
   "license": "MIT",
   "dependencies": {
     "jasmine-node": "~1.13.0",
